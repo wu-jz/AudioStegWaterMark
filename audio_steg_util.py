@@ -55,7 +55,7 @@ def add_steg_in_wav(sound_path, file_data, output_path, num_lsb):
 
 # 通过解析所有类型音频文件进行隐写内容添加，最后输出为wav格式文件(使用pydub)
 # sound_path:音频路径  file_data:隐写内容  output_path:文件输出路径  num_lsb:替换最低有效位位数
-def hide_data_audio_type_to_wav(sound_path, file_data, output_path, num_lsb):
+def add_steg_in_audio(sound_path, file_data, output_path, num_lsb):
     start = time()  # 计算程序总运行时间
     # 通过pydub解析音频
     sound = AudioSegment.from_file(sound_path)
@@ -100,7 +100,7 @@ def hide_data_audio_type_to_wav(sound_path, file_data, output_path, num_lsb):
 
 # 解析wav文件返回隐写内容
 # sound_path:音频路径  num_lsb:替换最低有效位位数  bytes_to_recover:隐写内容位数
-def recover_data_wav(sound_path, num_lsb, bytes_to_recover):
+def recover_data_from_wav(sound_path, num_lsb, bytes_to_recover):
     start = time()
     sound = wave.open(sound_path, "r")
     # 获取音频的相关信息
